@@ -1,0 +1,81 @@
+@use "../settings/variables";
+
+$types: none, flex, grid, block;
+
+@each $type in $types {
+  .#{$type} {
+    display: $type;
+  }
+}
+
+@media (max-width: variables.$max-width-xl) {
+  @each $type in $types {
+    .xl\:#{$type} {
+      display: $type;
+    }
+  }
+}
+
+@media (max-width: variables.$max-width-lg) {
+  @each $type in $types {
+    .lg\:#{$type} {
+      display: $type;
+    }
+  }
+}
+
+@media (max-width: variables.$max-width-md) {
+  @each $type in $types {
+    .md\:#{$type} {
+      display: $type;
+    }
+  }
+}
+
+@media (max-width: variables.$max-width-sm) {
+  @each $type in $types {
+    .sm\:#{$type} {
+      display: $type;
+    }
+  }
+}
+
+$types: center, flex-end, space-between;
+
+@each $type in $types {
+  .justify-#{$type} {
+    justify-content: $type;
+  }
+}
+
+@media (max-width: variables.$max-width-lg) {
+  @each $type in $types {
+    .lg\:justify-#{$type} {
+      justify-content: $type;
+    }
+  }
+}
+
+@media (max-width: variables.$max-width-md) {
+  @each $type in $types {
+    .md\:justify-#{$type} {
+      justify-content: $type;
+    }
+  }
+}
+
+$types: center, flex-end;
+
+@each $type in $types {
+  .items-#{$type} {
+    align-items: $type;
+  }
+}
+
+@media (max-width: variables.$max-width-lg) {
+  @each $type in $types {
+    .lg\:items-#{$type} {
+      align-items: $type;
+    }
+  }
+}

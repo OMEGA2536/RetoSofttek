@@ -1,0 +1,11 @@
+@use "../settings/variables";
+@use "../tools/functions";
+@use "../tools/mixins";
+
+// .input-text-custom {
+//   input:focus ~ label,
+//   input:valid ~ label {
+//     top: 10px;
+//     @include mixins.calculate-font-size(0.5);
+//   }
+// }

@@ -1,0 +1,26 @@
+@use "../settings/variables";
+@use "../tools/functions";
+
+:root {
+  --ON: initial;
+  /* stylelint-disable declaration-block-semicolon-space-before */
+  --OFF: ;
+  /* stylelint-enable declaration-block-semicolon-space-before */
+  --light: var(--ON);
+  --dark: var(--OFF);
+
+  &.dark-theme {
+    --light: var(--OFF);
+    --dark: var(--ON);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    --light: var(--OFF);
+    --dark: var(--ON);
+
+    &.light-theme {
+      --light: var(--ON);
+      --dark: var(--OFF);
+    }
+  }
+}

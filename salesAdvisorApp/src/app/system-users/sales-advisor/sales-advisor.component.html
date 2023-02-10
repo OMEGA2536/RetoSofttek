@@ -1,0 +1,60 @@
+<form class="form-control">
+  <app-card title="Mis Ventas">
+    <section class="flex justify-flex-end" >
+      <app-btn-add
+      (click)="addSale()"
+      text="Nueva Venta"
+      ></app-btn-add>
+    </section>
+    <table class="table-default">
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Fecha</th>
+          <th>Vendedor</th>
+          <th>Producto</th>
+          <th>Cantidad</th>
+          <th>Costo</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let item of salesList; let i = index">
+        <tr>
+          <td> {{item.id}}</td>          
+          <td>{{item.date | date:"dd-MM-yyyy"}}</td>
+          <td>{{item.advisorName}}</td>
+          <td>{{item.productName}}</td>
+          <td>{{item.quantity}}</td>          
+          <td>{{item.cost}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </app-card>
+</form>
+<section class="flex justify-flex-end">
+  <app-btn-secondary
+      text="Nuevo Producto"
+      bg="primary"
+      (click)="addProdct()"
+  ></app-btn-secondary>
+  </section>
+<section *ngIf="visibleSales">
+  <app-new-sale
+  [visible]="visibleSales"
+  (close)="visibleSales = false; LoadSales();"
+  >    
+  </app-new-sale>
+</section>
+<section *ngIf="visibleSales">
+  <app-new-sale
+  [visible]="visibleSales"
+  (close)="visibleSales = false"
+  >    
+  </app-new-sale>
+</section>
+<section *ngIf="visibleProduct">
+  <app-new-product
+  [visible]="visibleProduct"
+  (close)="visibleProduct = false"
+  >    
+  </app-new-product>
+</section>

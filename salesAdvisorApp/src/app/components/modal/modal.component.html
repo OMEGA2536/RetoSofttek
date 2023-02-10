@@ -1,0 +1,24 @@
+<section
+  *ngIf="visible"
+  class="fixed left-0 top-0 h-screen w-full flex-center z-50 bg-dark-700"  
+  
+>
+  <section
+    [class]="getWidth()"
+    class="relative overflow-y-auto max-h-11-12 rounded-3 py-8 px-9 shadow-1 bg-white scrollbar-default"
+    style="background-color: #1c355e;
+            background-size: cover;
+            background-attachment: fixed;
+            border: 2px solid #25b0dc;"
+  >
+    <div
+      *ngIf="closeIconVisible"
+      class="absolute top-15 right-18 text-gray-2 cursor-pointer text-9"
+      (click)="close.emit()"
+    >
+      x
+    </div>
+    <p class="text-white text-600 text-7 mb-4">{{ title }}</p>
+    <ng-content></ng-content>
+  </section>
+</section>

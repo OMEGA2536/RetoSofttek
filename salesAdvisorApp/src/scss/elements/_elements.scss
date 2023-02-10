@@ -1,0 +1,56 @@
+@use "../settings/variables";
+@use "../tools/functions";
+
+body {
+  font-family: variables.$font-family;
+}
+
+html {
+  scroll-behavior: smooth;
+  height: 100vh;
+  margin: 0px;
+  background-color: #1c355e;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+  // display: none;
+  // -webkit-appearance: none;
+  background: transparent;
+  bottom: 0;
+  color: transparent;
+  cursor: pointer;
+  height: auto;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: auto;
+}
+
+input[type="date"] {
+  display: inline-block;
+  position: relative;
+}
+
+i {
+  width: 2px;
+  right: 30px;
+  font-size: 20px;
+  line-height: 40px;
+  cursor: pointer;
+  z-index: 1;
+}

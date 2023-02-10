@@ -1,0 +1,19 @@
+@function light-dark($light, $dark) {
+  @return var(--light, #{$light}) var(--dark, #{$dark});
+}
+
+// @function gradient(
+//   $direction: right,
+//   $percentage: 50%,
+//   $first-color: variables.$primary-color,
+//   $second-color: variables.$white-color
+// ) {
+//   $background: linear-gradient(
+//     to $direction,
+//     $first-color 0%,
+//     $first-color $percentage,
+//     $second-color $percentage,
+//     $second-color 100%
+//   );
+//   @return $background;
+// }

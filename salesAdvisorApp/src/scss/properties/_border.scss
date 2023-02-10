@@ -1,0 +1,26 @@
+@use "../settings/variables";
+@use "../tools/functions";
+
+.border-t-1-primary {
+  border-top: 1px solid #{functions.light-dark(variables.$primary-color, variables.$primary-inverted-color)};
+}
+
+.border-b-2-primary {
+  border-bottom: 2px solid #{functions.light-dark(variables.$primary-color, variables.$primary-inverted-color)};
+}
+
+.border-b-2-gray-2 {
+  border-bottom: 2px solid #{functions.light-dark(variables.$gray-color-2, variables.$primary-inverted-color)};
+}
+
+.border-5-danger-2 {
+  border: 5px solid #{functions.light-dark(variables.$danger-color-2, variables.$primary-inverted-color)};
+}
+
+.border-2-secondary {
+  border: 2px solid #{functions.light-dark(variables.$secondary-color, variables.$primary-inverted-color)};
+}
+
+.border-3-secondary {
+  border: 3px solid #{functions.light-dark(variables.$secondary-color, variables.$primary-inverted-color)};
+}

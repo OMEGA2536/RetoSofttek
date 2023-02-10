@@ -1,0 +1,17 @@
+<section class="fixed bg-primary-800 top-0 left-0 h-30 w-full z-20">
+  <section class="flex justify-space-between items-center px-25 lg:px-4 sm:px-0">
+    
+    <section class="flex items-center">
+      <section class="flex-center">
+        <app-svg-user className="scale-3 h-20 md:none"></app-svg-user>       
+        <p class="text-white text-8 w-22 md:none" style="font-size: smaller;">          
+        </p>
+      </section>
+
+      <section>
+        <app-svg-setting className="scale-3 h-12 cursor-pointer md:scale-2"></app-svg-setting>
+        <app-svg-power className="scale-3 h-12 cursor-pointer md:scale-2" (click)="toLoginView()"></app-svg-power>
+      </section>
+    </section>
+  </section>
+</section>

@@ -1,0 +1,16 @@
+@use "../settings/variables";
+@use "../tools/functions";
+
+@mixin input-base($background: variables.$white-color, $border: variables.$gray-color-1, $focus-border-color: grey) {
+  background: rgba(37, 176, 220, 0.3); //rgba(variables.$primary-color, 0.3);
+  border: 2px solid #25b0dc;
+  box-shadow: none;
+  color: variables.$white-color;
+  outline: none;
+  width: 100%;
+  padding: 0.3rem 0.9rem;
+  font-size: 14px;
+  &::placeholder {
+    color: variables.$white-color;
+  }
+}

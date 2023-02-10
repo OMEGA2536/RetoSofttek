@@ -1,0 +1,14 @@
+<section [class]="menuGrid">
+  <button
+    *ngFor="let menuItem of menuItems; index as i"
+    class="text-white border-2-secondary rounded-3 flex items-center text-8 px-2 cursor-pointer md:justify-center"
+    [class.bg-primary]="isCurrentSection(menuItem.section)"
+    [class.bg-secondary-500]="!isCurrentSection(menuItem.section)"
+    id="menu-item"
+    type="button"    
+  >
+    <ng-container *ngComponentOutlet="menuItem.svgComponent"></ng-container>
+
+    <p class="md:none">{{ menuItem.text }}</p>
+  </button>
+</section>

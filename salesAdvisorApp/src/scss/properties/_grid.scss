@@ -1,0 +1,239 @@
+@use "../settings/variables";
+
+@for $i from 1 through 12 {
+  .grid-cols-#{$i} {
+    grid-template-columns: repeat(#{$i}, minmax(0, 1fr));
+  }
+}
+
+.col-auto {
+  grid-column: auto;
+}
+
+@for $i from 1 through 12 {
+  .col-span-#{$i} {
+    grid-column: span #{$i} / span #{$i};
+  }
+}
+
+.col-span-full {
+  grid-column: 1 / -1;
+}
+
+@for $i from 1 through 13 {
+  .col-start-#{$i} {
+    grid-column-start: #{$i};
+  }
+}
+
+.col-start-auto {
+  grid-column-start: auto;
+}
+
+@for $i from 1 through 13 {
+  .col-end-#{$i} {
+    grid-column-end: #{$i};
+  }
+}
+
+.col-end-auto {
+  grid-column-end: auto;
+}
+
+@media (max-width: variables.$max-width-xl) {
+  @for $i from 1 through 12 {
+    .xl\:grid-cols-#{$i} {
+      grid-template-columns: repeat(#{$i}, minmax(0, 1fr));
+    }
+  }
+
+  .xl\:col-auto {
+    grid-column: auto;
+  }
+
+  @for $i from 1 through 12 {
+    .xl\:col-span-#{$i} {
+      grid-column: span #{$i} / span #{$i};
+    }
+  }
+
+  .xl\:col-span-full {
+    grid-column: 1 / -1;
+  }
+
+  @for $i from 1 through 13 {
+    .xl\:col-start-#{$i} {
+      grid-column-start: #{$i};
+    }
+  }
+
+  .xl\:col-start-auto {
+    grid-column-start: auto;
+  }
+
+  @for $i from 1 through 13 {
+    .xl\:col-end-#{$i} {
+      grid-column-end: #{$i};
+    }
+  }
+
+  .xl\:col-end-auto {
+    grid-column-end: auto;
+  }
+}
+
+@media (max-width: variables.$max-width-lg) {
+  @for $i from 1 through 12 {
+    .lg\:grid-cols-#{$i} {
+      grid-template-columns: repeat(#{$i}, minmax(0, 1fr));
+    }
+  }
+
+  .lg\:col-auto {
+    grid-column: auto;
+  }
+
+  @for $i from 1 through 12 {
+    .lg\:col-span-#{$i} {
+      grid-column: span #{$i} / span #{$i};
+    }
+  }
+
+  .lg\:col-span-full {
+    grid-column: 1 / -1;
+  }
+
+  @for $i from 1 through 13 {
+    .lg\:col-start-#{$i} {
+      grid-column-start: #{$i};
+    }
+  }
+
+  .lg\:col-start-auto {
+    grid-column-start: auto;
+  }
+
+  @for $i from 1 through 13 {
+    .lg\:col-end-#{$i} {
+      grid-column-end: #{$i};
+    }
+  }
+
+  .lg\:col-end-auto {
+    grid-column-end: auto;
+  }
+}
+
+@media (max-width: variables.$max-width-md) {
+  @for $i from 1 through 12 {
+    .md\:grid-cols-#{$i} {
+      grid-template-columns: repeat(#{$i}, minmax(0, 1fr));
+    }
+  }
+
+  .md\:col-auto {
+    grid-column: auto;
+  }
+
+  @for $i from 1 through 12 {
+    .md\:col-span-#{$i} {
+      grid-column: span #{$i} / span #{$i};
+    }
+  }
+
+  .md\:col-span-full {
+    grid-column: 1 / -1;
+  }
+
+  @for $i from 1 through 13 {
+    .md\:col-start-#{$i} {
+      grid-column-start: #{$i};
+    }
+  }
+
+  .md\:col-start-auto {
+    grid-column-start: auto;
+  }
+
+  @for $i from 1 through 13 {
+    .md\:col-end-#{$i} {
+      grid-column-end: #{$i};
+    }
+  }
+
+  .md\:col-end-auto {
+    grid-column-end: auto;
+  }
+}
+
+@media (max-width: variables.$max-width-sm) {
+  @for $i from 1 through 12 {
+    .sm\:grid-cols-#{$i} {
+      grid-template-columns: repeat(#{$i}, minmax(0, 1fr));
+    }
+  }
+
+  .sm\:col-auto {
+    grid-column: auto;
+  }
+
+  @for $i from 1 through 12 {
+    .sm\:col-span-#{$i} {
+      grid-column: span #{$i} / span #{$i};
+    }
+  }
+
+  .sm\:col-span-full {
+    grid-column: 1 / -1;
+  }
+
+  @for $i from 1 through 13 {
+    .sm\:col-start-#{$i} {
+      grid-column-start: #{$i};
+    }
+  }
+
+  .sm\:col-start-auto {
+    grid-column-start: auto;
+  }
+
+  @for $i from 1 through 13 {
+    .sm\:col-end-#{$i} {
+      grid-column-end: #{$i};
+    }
+  }
+
+  .sm\:col-end-auto {
+    grid-column-end: auto;
+  }
+}
+
+@for $i from 1 through 20 {
+  .gap-#{$i} {
+    gap: #{$i}rem;
+  }
+
+  .gap-x-#{$i} {
+    gap: 0 #{$i}rem;
+  }
+
+  .gap-y-#{$i} {
+    gap: #{$i}rem 0;
+  }
+}
+
+@media (max-width: variables.$max-width-lg) {
+  @for $i from 1 through 20 {
+    .lg\:gap-#{$i} {
+      gap: #{$i}rem;
+    }
+
+    .lg\:gap-x-#{$i} {
+      gap: 0 #{$i}rem;
+    }
+
+    .lg\:gap-y-#{$i} {
+      gap: #{$i}rem 0;
+    }
+  }
+}

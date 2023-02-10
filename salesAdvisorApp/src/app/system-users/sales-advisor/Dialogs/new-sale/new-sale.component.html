@@ -1,0 +1,74 @@
+
+    <app-modal
+    title="Nueva Venta"
+    [visible]="visible"
+    [closeIconVisible]="false"
+    size="lg"
+    >
+    <app-card title="Productos">
+        <table class="table-default">
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let item of productList; let i = index">
+                <tr>
+                    <td>{{item.id}}</td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.price}}</td>
+                    <td> 
+                        <app-btn-secondary
+                        text="Seleccionar"
+                        bg="primary"
+                        (click)="addProduct(item)"
+                    ></app-btn-secondary>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </app-card>
+    <app-card title="Completar Venta {{productName}}" [hidden]="boolSale">
+        <form  class="form-control" [formGroup]="salesForm">
+            <section class="grid grid-cols-2 gap-x-2 md:grid-cols-1">
+                <section class="form-control">
+                    <label for="" class="label">Institución</label>
+                    <input formControlName="Quantity" type="number" class="input-text-rounded" placeholder="Cantidad">                    
+                </section>
+                <section class="form-control">
+                    <label for="" class="label">Carrera</label>
+                    <app-select-rounded
+                    placeholder="Vendedor"
+                    [value]=""
+                    [options]="advisorList"
+                    optionText="name"
+                    optionValue="id"
+                    (selected)="salesForm.get('AdvisorId')?.setValue($event)">
+                    </app-select-rounded>                    
+                </section>   
+            </section>
+        </form>
+    </app-card>
+    <section class="grid grid-cols-6 mt-6">
+        <section class="col-start-1">
+             <app-btn-primary
+                text="Grabar"
+                bg="primary"
+                (click)="addSale()"
+            ></app-btn-primary>
+        </section>
+        <section class="col-start-6">
+                <app-btn-secondary
+                text="Cancelar"
+                bg="primary"
+                (click)="close.emit()"
+            ></app-btn-secondary>
+        </section>
+    
+       
+        </section>
+</app-modal>
+

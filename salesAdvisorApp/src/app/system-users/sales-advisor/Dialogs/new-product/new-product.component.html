@@ -1,0 +1,41 @@
+<form  class="form-control">
+    <app-modal
+    title=""
+    [visible]="visible"
+    [closeIconVisible]="false"
+    size="md"
+    >
+    <app-card title="Nuevo Producto">
+        <form  class="form-control" [formGroup]="productForm">
+            <section class="grid grid-cols-2 gap-x-2 md:grid-cols-1">
+                <section class="form-control">
+                    <label for="" class="label">Nombre</label>
+                    <input formControlName="Name" type="text" class="input-text-rounded" placeholder="Nombre de producto">                    
+                </section>
+                <section class="form-control">
+                    <label for="" class="label">Precio</label>
+                    <input formControlName="Price" type="number" class="input-text-rounded" placeholder="Precio">                    
+                </section>
+            </section>
+        </form>
+    </app-card>
+    <section class="grid grid-cols-6 mt-6">
+        <section class="col-start-1">
+             <app-btn-primary
+                text="Grabar"
+                bg="primary"
+                (click)="addProduct()"
+            ></app-btn-primary>
+        </section>
+        <section class="col-start-6">
+                <app-btn-secondary
+                text="Cancelar"
+                bg="primary"
+                (click)="close.emit()"
+            ></app-btn-secondary>
+        </section>
+    
+       
+        </section>
+</app-modal>
+</form>

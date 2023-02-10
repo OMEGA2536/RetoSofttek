@@ -1,0 +1,49 @@
+@use "../settings/variables";
+// @use "../tools/functions";
+@use "../tools/mixins";
+
+.input-text {
+  @include mixins.input-base();
+  &-rounded {
+    @include mixins.input-base();
+    border-radius: 8px;
+    padding: 0.5rem 1.5rem;
+    background: rgba(168, 168, 168, 0.3);
+  }
+}
+
+.input-password {
+  @include mixins.input-base();
+  &-rounded {
+    @include mixins.input-base();
+    border-radius: 8px;
+    padding: 0.5rem 1.5rem;
+    background: rgba(168, 168, 168, 0.3);
+  }
+}
+
+.input-date {
+  @include mixins.input-base();
+  &-rounded {
+    @include mixins.input-base();
+    border-radius: 8px;
+    padding: 0.2rem 1.5rem;
+    background: rgba(168, 168, 168, 0.3);
+    height: 36.1px;
+  }
+}
+
+.text-area {
+  @include mixins.input-base();
+  &-rounded {
+    @include mixins.input-base();
+    border-radius: 8px;
+    padding: 1.5rem;
+    background: rgba(168, 168, 168, 0.3);
+  }
+}
+
+// .input-checkbox {
+//   border: 2px solid variables.$white-color;
+//   background: transparent;
+// }

@@ -1,0 +1,120 @@
+@use "../settings/variables";
+@use "../tools/functions";
+@use "../tools/mixins";
+
+.text {
+  &-white {
+    color: #{functions.light-dark(variables.$white-color, variables.$white-color)};
+  }
+  &-black {
+    color: #{functions.light-dark(variables.$black-color, variables.$white-color)};
+  }
+  &-full-black {
+    color: #{functions.light-dark(variables.$black-color, variables.$black-color)};
+  }
+  &-primary {
+    color: #{functions.light-dark(variables.$primary-color, variables.$primary-inverted-color)};
+  }
+  &-gray-1 {
+    color: #{functions.light-dark(variables.$gray-color-1, variables.$gray-color-1)};
+  }
+  &-gray-2 {
+    color: #{functions.light-dark(variables.$gray-color-2, variables.$gray-color-2)};
+  }
+  &-gray-3 {
+    color: #{functions.light-dark(variables.$gray-color-3, variables.$gray-color-3)};
+  }
+  &-yellow {
+    color: #{functions.light-dark(variables.$yellow-color, variables.$yellow-color)};
+  }
+  &-blue {
+    color: #{functions.light-dark(variables.$blue-color-1, variables.$blue-color-2)};
+  }
+  &-green {
+    color: #{functions.light-dark(variables.$green-color, variables.$green-color)};
+  }
+  &-shadow {
+    text-shadow: #{functions.light-dark(variables.$shadow-light, variables.$shadow-dark)};
+  }
+  &-decoration-none {
+    text-decoration: none;
+  }
+  &-underline {
+    text-decoration: underline;
+  }
+}
+
+@media (max-width: variables.$max-width-lg) {
+  .lg\:text {
+    &-black {
+      color: #{functions.light-dark(variables.$black-color, variables.$white-color)};
+    }
+    &-primary {
+      color: #{functions.light-dark(variables.$primary-color, variables.$primary-inverted-color)};
+    }
+  }
+}
+
+/* font-weight */
+
+$numbers: 100, 200, 300, 400, 500, 600, 700, 800, 900;
+
+@each $number in $numbers {
+  .text-#{$number} {
+    font-weight: $number;
+  }
+}
+
+$styles: italic;
+
+@each $style in $styles {
+  .text-#{$style} {
+    font-style: $style;
+  }
+}
+
+$types: uppercase, lowercase;
+
+@each $type in $types {
+  .#{$type} {
+    text-transform: $type;
+  }
+}
+
+$directions: center, left, right, justify;
+
+@each $direction in $directions {
+  .text-#{$direction} {
+    text-align: $direction;
+  }
+}
+
+@media (max-width: variables.$max-width-lg) {
+  @each $direction in $directions {
+    .lg\:text-#{$direction} {
+      text-align: $direction;
+    }
+  }
+}
+
+$accumulator: 1;
+
+@for $i from 1 through 10 {
+  $accumulator: $accumulator + 0.25rem;
+  .leading-#{$i} {
+    line-height: $accumulator;
+  }
+}
+
+$accumulator: 0;
+
+@for $i from 1 through 30 {
+  $accumulator: $accumulator + 0.1;
+  .text-#{$i} {
+    @include mixins.calculate-font-size($accumulator);
+  }
+}
+
+// .hover\:text-blue:hover {
+//   color: #{functions.light-dark(variables.$blue-color-1, variables.$blue-color-2)};
+// }

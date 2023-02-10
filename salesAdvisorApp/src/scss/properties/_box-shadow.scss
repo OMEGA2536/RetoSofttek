@@ -1,0 +1,11 @@
+@use "../settings/variables";
+
+$accumulator: 0;
+
+@for $i from 1 through 5 {
+  $accumulator: $accumulator + 12;
+  .shadow-#{$i} {
+    box-shadow: 0px 3px #{$accumulator}px rgba(114, 124, 142, 0.196706); //rgba(variables.$black-color, 0.37);
+  }
+}
+//0px 3px 12px rgba(114, 124, 142, 0.196706);

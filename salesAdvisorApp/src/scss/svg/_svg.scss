@@ -1,0 +1,78 @@
+@use "../settings/variables";
+@use "../tools/functions";
+@use "../tools/mixins";
+
+.fill {
+  &-primary {
+    fill: #{functions.light-dark(variables.$primary-color, variables.$primary-inverted-color)};
+  }
+  &-gray-1 {
+    fill: #{functions.light-dark(variables.$gray-color-1, variables.$gray-color-1)};
+  }
+}
+
+.path-stroke {
+  &-primary {
+    path {
+      stroke: #{functions.light-dark(variables.$primary-color, variables.$primary-inverted-color)};
+    }
+  }
+  &-gray-1 {
+    path {
+      stroke: #{functions.light-dark(variables.$gray-color-1, variables.$gray-color-1)};
+    }
+  }
+  &-gray-2 {
+    path {
+      stroke: #{functions.light-dark(variables.$gray-color-2, variables.$gray-color-1)};
+    }
+  }
+  &-gray-3 {
+    path {
+      stroke: #{functions.light-dark(variables.$gray-color-3, variables.$gray-color-1)};
+    }
+  }
+  &-white {
+    path {
+      stroke: #{functions.light-dark(variables.$white-color, variables.$white-color)};
+    }
+  }
+  &-black {
+    path {
+      stroke: #{functions.light-dark(variables.$black-color, variables.$white-color)};
+    }
+  }
+}
+
+.path-fill {
+  &-primary {
+    path {
+      fill: #{functions.light-dark(variables.$primary-color, variables.$primary-inverted-color)};
+    }
+  }
+  &-gray-1 {
+    path {
+      fill: #{functions.light-dark(variables.$gray-color-1, variables.$gray-color-1)};
+    }
+  }
+  &-gray-2 {
+    path {
+      fill: #{functions.light-dark(variables.$gray-color-2, variables.$gray-color-1)};
+    }
+  }
+  &-gray-3 {
+    path {
+      fill: #{functions.light-dark(variables.$gray-color-3, variables.$gray-color-1)};
+    }
+  }
+  &-black {
+    path {
+      fill: #{functions.light-dark(variables.$black-color, variables.$white-color)};
+    }
+  }
+  &-white {
+    path {
+      fill: #{functions.light-dark(variables.$white-color, variables.$white-color)};
+    }
+  }
+}

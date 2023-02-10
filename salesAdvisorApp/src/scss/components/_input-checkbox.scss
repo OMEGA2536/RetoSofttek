@@ -1,0 +1,66 @@
+@use "../settings/variables";
+@use "../tools/mixins";
+
+.input-checkbox {
+  display: block;
+  position: relative;
+  padding: 0 0 0 30px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  // background: gold;
+  height: 18px;
+  display: flex;
+  align-items: center;
+}
+
+.input-checkbox input {
+  // position: absolute;
+  // opacity: 0;
+  // cursor: pointer;
+  // height: 0;
+  // width: 0;
+  display: none;
+}
+
+.checkmark {
+  position: absolute;
+  top: -1px;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  // background-color: transparent;
+  border: 2px solid variables.$white-color;
+}
+
+// .input-checkbox:hover input ~ .checkmark {
+//   background-color: transparent;
+// }
+
+.input-checkbox input:checked ~ .checkmark {
+  background: variables.$secondary-color;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.input-checkbox input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.input-checkbox .checkmark:after {
+  left: 7px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid variables.$white-color;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}

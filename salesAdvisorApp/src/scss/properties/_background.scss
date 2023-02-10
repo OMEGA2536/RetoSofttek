@@ -1,0 +1,92 @@
+@use "../settings/variables";
+@use "../tools/mixins";
+@use "../tools/functions";
+
+.bg-primary {
+  background: #{functions.light-dark(variables.$primary-color, variables.$primary-inverted-color)};
+}
+
+.bg-secondary {
+  background: #{functions.light-dark(variables.$secondary-color, variables.$secondary-color)};
+}
+
+.bg-white {
+  background: #{functions.light-dark(variables.$white-color, variables.$dark-color)};
+}
+
+.bg-black {
+  background: #{functions.light-dark(variables.$black-color, variables.$dark-color)};
+}
+
+.bg-dark {
+  background: #{functions.light-dark(variables.$dark-color, variables.$dark-color)};
+}
+
+.bg-gray-1 {
+  background: #{functions.light-dark(variables.$gray-color-1, variables.$gray-color-1)};
+}
+
+.bg-gray-2 {
+  background: #{functions.light-dark(variables.$gray-color-2, variables.$gray-color-2)};
+}
+
+.bg-gray-3 {
+  background: #{functions.light-dark(variables.$gray-color-3, variables.$gray-color-3)};
+}
+
+.bg-accent {
+  background: #{functions.light-dark(variables.$accent-color, variables.$dark-color)};
+}
+
+.bg-caqui {
+  background: #{functions.light-dark(variables.$caqui-color, variables.$caqui-color)};
+}
+
+.bg-yellow {
+  background: #{functions.light-dark(variables.$yellow-color, variables.$yellow-color)};
+}
+
+.bg-danger {
+  background: #{functions.light-dark(variables.$danger-color, variables.$yellow-color)};
+}
+
+// $directions: right, left, top, bottom;
+
+// @for $i from 1 through 9 {
+//   @each $direction in $directions {
+//     .bg-primary-gradient-#{$direction}-#{$i * 10} {
+//       $background-ligth: #{functions.gradient($direction, $i * 10%, variables.$primary-color, transparent)};
+//       $background-dark: #{functions.gradient($direction, $i * 10%, variables.$primary-inverted-color, transparent)};
+
+//       $background: #{functions.light-dark($background-ligth, $background-dark)};
+//       background: $background;
+//     }
+//   }
+// }
+
+$opacities: 100, 200, 300, 400, 500, 600, 700, 800, 900;
+
+@each $opacity in $opacities {
+  .bg-primary-#{$opacity} {
+    background: rgba(variables.$primary-color, calc($opacity / 1000));
+  }
+
+  .bg-secondary-#{$opacity} {
+    background: rgba(variables.$secondary-color, calc($opacity / 1000));
+  }
+
+  .bg-gray-2-#{$opacity} {
+    background: rgba(variables.$gray-color-2, calc($opacity / 1000));
+  }
+
+  .hover\:bg-primary-#{$opacity}:hover {
+    background: rgba(variables.$primary-color, calc($opacity / 1000));
+  }
+}
+
+.hover\:bg-accent:hover {
+  background: #{functions.light-dark(variables.$accent-color, variables.$accent-color)};
+}
+
+// @media (max-width: variables.$max-width-lg) {
+// }

@@ -1,0 +1,46 @@
+<section class="relative">
+  <section class="flex items-center" (click)="_disabled?visibleOptions=visibleOptions:visibleOptions = !visibleOptions">
+    <input 
+      type="text"
+      class="input-text-rounded cursor-pointer"
+      placeholder="Seleccione"
+      [value]="text"      
+      (click)="clearValue(); focus();"
+      readonly
+      >
+    <app-svg-triangle-down
+      className="scale-3 h-4"
+      style="margin-left: -36px;"
+      (click)="clearValue(); focus();"
+    ></app-svg-triangle-down>
+  </section>
+
+  <section 
+    [hidden]="!visibleOptions"
+    
+    style="margin-top: 3px;"
+    class="absolute w-full z-10 " 
+  >
+  <section class="overflow-hidden bg-white shadow-2 rounded-2" >
+    <section >
+        <input
+        type="text"       
+        class="w-100"
+        #filter
+        (keyup)="onKeyUp(filter.value)"
+        (blur)="visibleOptions = false"
+        >
+    </section>
+    
+     <ul class="scrollbar-default" style="overflow-y: scroll; max-height: 200px;" (mousedown)="$event.preventDefault()">    
+      <li class="text-6 py-2 px-4 cursor-pointer hover:bg-primary-200 "
+        *ngFor="let option of optionAux; index as i"
+        (click)="select(option)"
+      >
+        {{ getOptionText(option) }}
+      </li>
+    </ul>
+  </section>
+   
+  </section>
+</section>

@@ -1,0 +1,75 @@
+@use "../settings/variables";
+
+.ml-1-6 {
+  margin-left: 16.666667%;
+}
+
+.ml-1-12 {
+  margin-left: 8.333333%;
+}
+
+$accumulator: 0;
+
+@for $i from 0 through 40 {
+  .mx-#{$i} {
+    margin-right: $accumulator;
+    margin-left: $accumulator;
+  }
+
+  .my-#{$i} {
+    margin-top: $accumulator;
+    margin-bottom: $accumulator;
+  }
+
+  .mr-#{$i} {
+    margin-right: $accumulator;
+  }
+
+  .ml-#{$i} {
+    margin-left: $accumulator;
+  }
+
+  .mt-#{$i} {
+    margin-top: $accumulator;
+  }
+
+  .mb-#{$i} {
+    margin-bottom: $accumulator;
+  }
+
+  $accumulator: $accumulator + 0.25rem;
+}
+
+@media (max-width: variables.$max-width-lg) {
+  $accumulator: 0;
+
+  @for $i from 0 through 40 {
+    .lg\:mx-#{$i} {
+      margin-right: $accumulator;
+      margin-left: $accumulator;
+    }
+
+    .lg\:my-#{$i} {
+      margin-top: $accumulator;
+      margin-bottom: $accumulator;
+    }
+
+    .lg\:mr-#{$i} {
+      margin-right: $accumulator;
+    }
+
+    .lg\:ml-#{$i} {
+      margin-left: $accumulator;
+    }
+
+    .lg\:mt-#{$i} {
+      margin-top: $accumulator;
+    }
+
+    .lg\:mb-#{$i} {
+      margin-bottom: $accumulator;
+    }
+
+    $accumulator: $accumulator + 0.25rem;
+  }
+}

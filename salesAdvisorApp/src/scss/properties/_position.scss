@@ -1,0 +1,45 @@
+@use "../settings/variables";
+
+$positions: relative, absolute, fixed, initial, inherit;
+
+@each $position in $positions {
+  .#{$position} {
+    position: $position;
+  }
+}
+
+@media (max-width: variables.$max-width-lg) {
+  @each $position in $positions {
+    .lg\:#{$position} {
+      position: $position;
+    }
+  }
+}
+
+$directions: right, left, top, bottom;
+
+@each $direction in $directions {
+  @for $i from 0 through 100 {
+    .#{$direction}-#{$i} {
+      #{$direction}: $i * 1%;
+    }
+  }
+}
+
+@each $direction in $directions {
+  @for $i from 0 through 100 {
+    .#{$direction}-#{$i}px {
+      #{$direction}: #{$i}px;
+    }
+  }
+}
+
+@media (max-width: variables.$max-width-lg) {
+  @each $direction in $directions {
+    @for $i from 0 through 120 {
+      .lg\:#{$direction}-#{$i} {
+        #{$direction}: $i * 1%;
+      }
+    }
+  }
+}

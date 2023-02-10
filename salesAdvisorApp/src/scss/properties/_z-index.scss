@@ -1,0 +1,17 @@
+@use "../settings/variables";
+
+$numbers: 0, 10, 20, 30, 40, 50, auto;
+
+@each $number in $numbers {
+  .z-#{$number} {
+    z-index: $number;
+  }
+}
+
+@media (max-width: variables.$max-width-lg) {
+  @each $number in $numbers {
+    .lg\:z-#{$number} {
+      z-index: $number;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+@use "../settings/variables";
+@use "../tools/functions";
+@use "../tools/mixins";
+
+.label {
+  $color: #{functions.light-dark(variables.$white-color, variables.$white-color)};
+
+  color: $color;
+  margin-bottom: 0.3rem;
+  padding: 0 0 0 1.6rem;
+  display: block;
+  @include mixins.calculate-font-size(0.7);
+}

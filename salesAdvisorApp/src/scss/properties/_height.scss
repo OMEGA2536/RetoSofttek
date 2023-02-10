@@ -1,0 +1,57 @@
+@use "../settings/variables";
+
+.h-full {
+  height: 100%;
+}
+
+.h-screen {
+  height: 100vh;
+}
+
+.max-h-screen {
+  max-height: 100vh;
+}
+
+.min-h-screen {
+  min-height: 100vh;
+}
+
+.max-h-11-12 {
+  max-height: 91.666667%;
+}
+
+@media (max-width: variables.$max-width-lg) {
+  .lg\:h-full {
+    height: 100%;
+  }
+
+  // .lg\:h-60vh {
+  //   height: 60vh;
+  // }
+
+  .lg\:h-screen {
+    height: 100vh;
+  }
+
+  .lg\:min-h-screen {
+    min-height: 100vh;
+  }
+}
+
+$accumulator: 0;
+@for $i from 1 through 60 {
+  .h-#{$i} {
+    height: $accumulator;
+  }
+  $accumulator: $accumulator + 0.25rem;
+}
+
+@media (max-width: variables.$max-width-lg) {
+  $accumulator: 0;
+  @for $i from 1 through 60 {
+    .lg\:h-#{$i} {
+      height: $accumulator;
+    }
+    $accumulator: $accumulator + 0.25rem;
+  }
+}

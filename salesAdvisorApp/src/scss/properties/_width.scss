@@ -1,0 +1,168 @@
+@use "../settings/variables";
+
+.w-1-12 {
+  width: 8.333333%;
+}
+
+.w-3-12 {
+  width: 25%;
+}
+
+.w-6-12 {
+  width: 50%;
+}
+
+.w-9-12 {
+  width: 75%;
+}
+
+.w-11-12 {
+  width: 91.666667%;
+}
+
+.w-1-6 {
+  width: 16.666667%;
+}
+
+.w-5-6 {
+  width: 83.333333%;
+}
+
+.w-screen {
+  width: 100vw;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.min-w-1-3 {
+  min-width: 33.333333%;
+}
+
+.min-w-3-12 {
+  min-width: 25%;
+}
+
+.min-w-5-6 {
+  min-width: 83.333333%;
+}
+
+@media (max-width: variables.$max-width-xl) {
+  .xl\:w-6-12 {
+    width: 50%;
+  }
+  .xl\:w-screen {
+    width: 100vw;
+  }
+
+  .xl\:w-full {
+    width: 100%;
+  }
+}
+
+@media (max-width: variables.$max-width-lg) {
+  .lg\:w-full {
+    width: 100%;
+  }
+
+  .lg\:w-screen {
+    width: 100vw;
+  }
+  .lg\:w-9-12 {
+    width: 75%;
+  }
+}
+
+@media (max-width: variables.$max-width-md) {
+  .md\:w-full {
+    width: 100%;
+  }
+
+  .md\:w-screen {
+    width: 100vw;
+  }
+  .md\:w-9-12 {
+    width: 75%;
+  }
+}
+
+@media (max-width: variables.$max-width-sm) {
+  .sm\:w-full {
+    width: 100%;
+  }
+
+  .sm\:w-screen {
+    width: 100vw;
+  }
+  .sm\:w-11-12 {
+    width: 91.666667%;
+  }
+}
+
+$accumulator: 0;
+
+@for $i from 0 through 100 {
+  .w-#{$i} {
+    width: $accumulator;
+  }
+  $accumulator: $accumulator + 0.25rem;
+}
+
+@media (max-width: variables.$max-width-xl) {
+  $accumulator: 0;
+
+  @for $i from 0 through 100 {
+    .xl\:w-#{$i} {
+      width: $accumulator;
+    }
+    $accumulator: $accumulator + 0.25rem;
+  }
+}
+
+@media (max-width: variables.$max-width-lg) {
+  $accumulator: 0;
+
+  @for $i from 0 through 100 {
+    .lg\:w-#{$i} {
+      width: $accumulator;
+    }
+    $accumulator: $accumulator + 0.25rem;
+  }
+}
+
+@media (max-width: variables.$max-width-md) {
+  $accumulator: 0;
+
+  @for $i from 0 through 100 {
+    .md\:w-#{$i} {
+      width: $accumulator;
+    }
+    $accumulator: $accumulator + 0.25rem;
+  }
+}
+
+@media (max-width: variables.$max-width-sm) {
+  $accumulator: 0;
+
+  @for $i from 0 through 100 {
+    .sm\:w-#{$i} {
+      width: $accumulator;
+    }
+    $accumulator: $accumulator + 0.25rem;
+  }
+}
+
+// @for $i from 0 through 50 {
+//   .w-#{$i}ch {
+//     width: #{$i}ch;
+//   }
+// }
+
+// @media (max-width: variables.$max-width-lg) {
+//   @for $i from 0 through 50 {
+//     .lg\:w-#{$i}ch {
+//       width: #{$i}ch;
+//     }
+//   }
+// }

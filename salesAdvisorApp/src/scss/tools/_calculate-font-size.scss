@@ -1,0 +1,11 @@
+@use "../settings/variables";
+
+@mixin calculate-font-size($viewport-unit: 1, $increase-mobile-mode: 0.4) {
+  font-size: calc(#{$viewport-unit}vw + #{$viewport-unit}vh);
+
+  @media (max-width: variables.$max-width-md) {
+    $viewport-unit-increased: $viewport-unit + $increase-mobile-mode;
+
+    font-size: calc(#{$viewport-unit-increased}vw + #{$viewport-unit-increased}vh);
+  }
+}

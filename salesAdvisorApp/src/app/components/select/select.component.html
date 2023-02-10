@@ -1,0 +1,33 @@
+<section class="relative">
+  <section class="flex items-center" (click)="visibleOptions = !visibleOptions">
+    <input 
+      type="text"
+      class="input-text cursor-pointer"
+      placeholder="Seleccione"
+      [value]="text"
+      (blur)="visibleOptions = false"
+      #txtCombo
+      (keyup)="onKeyUp(txtCombo.value)"
+      (click)="clearValue()">
+    <app-svg-triangle-down
+      className="scale-3 h-4"
+      style="margin-left: -36px;"
+    ></app-svg-triangle-down>
+  </section>
+
+  <section 
+    *ngIf="visibleOptions"
+    (mousedown)="$event.preventDefault()"
+    style="margin-top: 3px;"
+    class="absolute w-full z-10" 
+  >
+    <ul class="bg-white shadow-2">
+      <li class="text-6 py-2 px-4 cursor-pointer hover:bg-primary-200"
+        *ngFor="let option of optionAux; index as i"
+        (click)="select(option)"
+      >
+        {{ getOptionText(option) }}
+      </li>
+    </ul>
+  </section>
+</section>

@@ -1,0 +1,9 @@
+$accumulator: 0;
+
+@for $i from 1 through 5 {
+  $accumulator: $accumulator + 0.1;
+
+  .divider-#{$i} {
+    height: #{$accumulator}rem;
+  }
+}
