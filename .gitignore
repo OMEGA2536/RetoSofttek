@@ -1,0 +1,50 @@
+# Visual Studio temporary files
+*.suo
+*.user
+*.sln.docstates
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+bld/
+[Bb]in/
+[Oo]bj/
+
+# Visual Studio cache files
+*.VC.db
+*.opensdf
+*.VC.VC.opendb
+
+# Visual Studio web publish folder
+*.pubxml
+*.publishproj
+
+# NuGet Packages
+**/packages/*
+
+# Visual Studio macros and add-in files
+*.mvvmproj
+*.csproj.user
+*.csproj.vspscc
+*.sln.vssscc
+
+
+# Angular files
+node_modules/
+dist/
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor directories and files
+.idea/
+.vscode/
+*.iml
+*.log
+*.swp
+*.orig
+.angular/cache
